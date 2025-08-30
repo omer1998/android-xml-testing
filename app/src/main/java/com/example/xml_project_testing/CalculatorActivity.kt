@@ -24,20 +24,16 @@ class CalculatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_calculator)
         initViews()
         addButton.setOnClickListener {
-            operation = Operation.ADD
-            manageOperation(operation!!)
+            manageOperation(Operation.ADD)
         }
         subtractButton.setOnClickListener {
-            operation = Operation.SUBTRACT
-            manageOperation(operation!!)
+            manageOperation(Operation.SUBTRACT)
         }
         multiplyButton.setOnClickListener {
-            operation = Operation.MULTIPLY
-            manageOperation(operation!!)
+            manageOperation(Operation.MULTIPLY)
         }
         divideButton.setOnClickListener {
-            operation = Operation.DIVIDE
-            manageOperation(operation!!)
+            manageOperation(Operation.DIVIDE)
         }
         clearButton.setOnClickListener {
             result.text = ""
@@ -56,11 +52,12 @@ class CalculatorActivity : AppCompatActivity() {
             }
         }
     }
-    private fun manageOperation(operation: Operation) {
+    private fun manageOperation(op: Operation) {
         if (result.text.isEmpty()) return
+        operation = op
         firstNumber = result.text.toString().toFloat()
         result.text = ""
-        equationText = equationText + firstNumber.toString() + operation.toSymbol()
+        equationText = equationText + firstNumber.toString() + op.toSymbol()
         equation.text = equationText
     }
 
