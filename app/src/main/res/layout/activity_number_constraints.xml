@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/t1"
+        android:padding="20dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textFontWeight="700"
+        android:background="#AD6C6C"
+        android:text="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="230dp"
+        app:layout_constraintEnd_toStartOf="@id/t2"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/t2"
+        android:background="#C82797"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="2"
+        android:textFontWeight="700"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="120dp"
+        app:layout_constraintStart_toEndOf="@id/t1"
+        app:layout_constraintTop_toTopOf="@id/t1"
+        app:layout_constraintEnd_toStartOf="@id/t3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/t3"
+        android:background="#BB91F6"
+        app:layout_constraintDimensionRatio="1:1"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="3"
+        android:textFontWeight="700"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="222dp"
+        app:layout_constraintStart_toEndOf="@id/t2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/t2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

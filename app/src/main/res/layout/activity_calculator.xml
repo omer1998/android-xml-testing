@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/equation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:gravity="end"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text=""
+        android:textColor="@color/brand"
+        android:textSize="33sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/equation" />
+
+    <Button
+        android:id="@+id/addButton"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/subtractButton"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result" />
+
+    <Button
+        android:id="@+id/subtractButton"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="-"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/multiplyButton"
+        app:layout_constraintStart_toEndOf="@+id/addButton"
+        app:layout_constraintTop_toTopOf="@id/addButton" />
+
+    <Button
+        android:id="@+id/multiplyButton"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="x"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/divideButton"
+        app:layout_constraintStart_toEndOf="@+id/subtractButton"
+        app:layout_constraintTop_toTopOf="@id/addButton" />
+
+    <Button
+        android:id="@+id/divideButton"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="/"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/multiplyButton"
+        app:layout_constraintTop_toTopOf="@id/addButton" />
+
+
+    <Button
+        android:id="@+id/sevenButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:text="7"
+        android:onClick="onNumberClick"
+        app:layout_constraintStart_toStartOf="@+id/addButton"
+        app:layout_constraintTop_toBottomOf="@+id/addButton" />
+
+    <Button
+        android:id="@+id/eightButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="8"
+        android:onClick="onNumberClick"
+        app:layout_constraintStart_toStartOf="@+id/subtractButton"
+        app:layout_constraintTop_toTopOf="@+id/sevenButton" />
+
+    <Button
+        android:id="@+id/nineButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="9"
+        android:onClick="onNumberClick"
+        app:layout_constraintStart_toStartOf="@+id/multiplyButton"
+        app:layout_constraintTop_toTopOf="@+id/sevenButton" />
+
+    <Button
+        android:id="@+id/clearButton"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="C"
+        app:layout_constraintStart_toStartOf="@+id/divideButton"
+        app:layout_constraintTop_toTopOf="@+id/nineButton" />
+
+    <Button
+        android:id="@+id/fourthButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:text="4"
+        android:onClick="onNumberClick"
+        app:layout_constraintStart_toStartOf="@+id/sevenButton"
+        app:layout_constraintTop_toBottomOf="@+id/sevenButton" />
+
+    <Button
+        android:id="@+id/backButton"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="⬅︎"
+        app:layout_constraintStart_toStartOf="@+id/clearButton"
+        app:layout_constraintTop_toTopOf="@+id/sixButton" />
+
+    <Button
+        android:id="@+id/fiveButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="2dp"
+        android:text="5"
+        android:onClick="onNumberClick"
+        app:layout_constraintStart_toStartOf="@+id/eightButton"
+        app:layout_constraintTop_toTopOf="@+id/fourthButton" />
+
+    <Button
+        android:id="@+id/sixButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="6"
+        android:onClick="onNumberClick"
+        app:layout_constraintStart_toStartOf="@+id/nineButton"
+        app:layout_constraintTop_toTopOf="@+id/fiveButton" />
+
+    <Button
+        android:id="@+id/threeButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="3"
+        android:onClick="onNumberClick"
+        app:layout_constraintStart_toStartOf="@+id/sixButton"
+        app:layout_constraintTop_toTopOf="@+id/twoButton" />
+
+    <Button
+        android:id="@+id/zeroButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:onClick="onNumberClick"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="@+id/oneButton"
+        app:layout_constraintTop_toBottomOf="@+id/oneButton" />
+
+    <Button
+        android:id="@+id/twoButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:onClick="onNumberClick"
+        android:text="2"
+        app:layout_constraintStart_toStartOf="@+id/fiveButton"
+        app:layout_constraintTop_toTopOf="@+id/oneButton" />
+
+    <Button
+        android:id="@+id/oneButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:text="1"
+        android:onClick="onNumberClick"
+        app:layout_constraintStart_toStartOf="@+id/fourthButton"
+        app:layout_constraintTop_toBottomOf="@+id/fourthButton" />
+
+    <Button
+        android:id="@+id/equalButton"
+        style="@style/CalculatorButton.EqualOperator"
+        android:layout_height="64dp"
+        android:layout_width="0dp"
+        android:elevation="20dp"
+        android:shadowColor="@color/white"
+        android:text="="
+        app:layout_constraintEnd_toEndOf="@+id/moduloButton"
+        app:layout_constraintStart_toStartOf="@+id/threeButton"
+        app:layout_constraintTop_toTopOf="@+id/dotButton" />
+
+    <Button
+        android:id="@+id/dotButton"
+        style="@style/CalculatorButton.Number"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="."
+        android:onClick="onNumberClick"
+        app:layout_constraintStart_toStartOf="@+id/twoButton"
+        app:layout_constraintTop_toTopOf="@+id/zeroButton" />
+
+    <Button
+        android:id="@+id/moduloButton"
+        style="@style/CalculatorButton.Operator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="%︎"
+        app:layout_constraintStart_toStartOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="@+id/threeButton" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="equalButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
